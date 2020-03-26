@@ -14,12 +14,11 @@
   <!--<includeDependencies package="." />-->
 
   <include package=".browser" />
-
-  <include file="permissions.zcml" />
+  <include package=".services" />
 
   <genericsetup:registerProfile
       name="default"
-      title="collective.volto.cookieconsent"
+      title="Volto Cookieconsent"
       directory="profiles/default"
       description="Installs the collective.volto.cookieconsent add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -28,7 +27,7 @@
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="collective.volto.cookieconsent (uninstall)"
+      title="Volto Cookieconsent (uninstall)"
       directory="profiles/uninstall"
       description="Uninstalls the collective.volto.cookieconsent add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"

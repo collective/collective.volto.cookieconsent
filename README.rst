@@ -2,29 +2,42 @@
    If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
    This text does not appear on pypi or github. It is a comment.
 
-==============================
-collective.volto.cookieconsent
-==============================
+====================
+Volto Cookie Consent
+====================
 
-Tell me what your product does
+Add-on for manage Cookie Consent banner on Volto
 
 Features
 --------
 
-- Can be bullet points
+- Control panel to plone registry to manage cookie consent settings.
+- Restapi view that exposes these settings for Volto
 
+Volto endpoint
+--------------
 
-Examples
---------
+Anonymous users can't access registry resources by default with plone.restapi (there is a special permission).
 
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
+To avoid enabling registry access to everyone, this package exposes a dedicated restapi route with cookie consent config: *@cookieconsent-infos*
 
+    > curl -i http://localhost:8080/Plone/@cookieconsent-infos -H 'Accept: application/json' --user admin:admin
+    >
+    > {
+    >   "accept_on_click": true,
+    >   "cookie_consent_configuration": {'some':'data'}
+    > }
 
-Documentation
+Control panel
 -------------
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+You can edit settings directly from Volto because the control has been registered on Plone and available with plone.restapi.
+
+
+Volto integration
+-----------------
+
+To use this product in Volto, your Volto project needs to include a new plugin: **TO-BE-CREATED**
 
 
 Translations
@@ -32,7 +45,7 @@ Translations
 
 This product has been translated into
 
-- Klingon (thanks, K'Plai)
+- Italian
 
 
 Installation

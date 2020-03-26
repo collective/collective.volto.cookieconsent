@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from collective.volto.cookieconsent.testing import COLLECTIVE_VOLTO_COOKIECONSENT_INTEGRATION_TESTING  # noqa: E501
+from collective.volto.cookieconsent.testing import (
+    VOLTO_COOKIECONSENT_INTEGRATION_TESTING,
+)  # noqa: E501
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
@@ -17,7 +19,7 @@ except ImportError:
 class TestSetup(unittest.TestCase):
     """Test that collective.volto.cookieconsent is properly installed."""
 
-    layer = COLLECTIVE_VOLTO_COOKIECONSENT_INTEGRATION_TESTING
+    layer = VOLTO_COOKIECONSENT_INTEGRATION_TESTING
 
     def setUp(self):
         """Custom shared utility setup for tests."""
@@ -29,22 +31,26 @@ class TestSetup(unittest.TestCase):
 
     def test_product_installed(self):
         """Test if collective.volto.cookieconsent is installed."""
-        self.assertTrue(self.installer.isProductInstalled(
-            'collective.volto.cookieconsent'))
+        self.assertTrue(
+            self.installer.isProductInstalled('collective.volto.cookieconsent')
+        )
+        self.assertTrue(self.installer.isProductInstalled('plone.restapi'))
 
     def test_browserlayer(self):
-        """Test that ICollectiveVoltoCookieconsentLayer is registered."""
+        """Test that ICollectiveVoltoCookieConsentLayer is registered."""
         from collective.volto.cookieconsent.interfaces import (
-            ICollectiveVoltoCookieconsentLayer)
+            ICollectiveVoltoCookieConsentLayer,
+        )
         from plone.browserlayer import utils
+
         self.assertIn(
-            ICollectiveVoltoCookieconsentLayer,
-            utils.registered_layers())
+            ICollectiveVoltoCookieConsentLayer, utils.registered_layers()
+        )
 
 
 class TestUninstall(unittest.TestCase):
 
-    layer = COLLECTIVE_VOLTO_COOKIECONSENT_INTEGRATION_TESTING
+    layer = VOLTO_COOKIECONSENT_INTEGRATION_TESTING
 
     def setUp(self):
         self.portal = self.layer['portal']
@@ -59,14 +65,17 @@ class TestUninstall(unittest.TestCase):
 
     def test_product_uninstalled(self):
         """Test if collective.volto.cookieconsent is cleanly uninstalled."""
-        self.assertFalse(self.installer.isProductInstalled(
-            'collective.volto.cookieconsent'))
+        self.assertFalse(
+            self.installer.isProductInstalled('collective.volto.cookieconsent')
+        )
 
     def test_browserlayer_removed(self):
-        """Test that ICollectiveVoltoCookieconsentLayer is removed."""
-        from collective.volto.cookieconsent.interfaces import \
-            ICollectiveVoltoCookieconsentLayer
+        """Test that ICollectiveVoltoCookieConsentLayer is removed."""
+        from collective.volto.cookieconsent.interfaces import (
+            ICollectiveVoltoCookieConsentLayer,
+        )
         from plone.browserlayer import utils
+
         self.assertNotIn(
-            ICollectiveVoltoCookieconsentLayer,
-            utils.registered_layers())
+            ICollectiveVoltoCookieConsentLayer, utils.registered_layers()
+        )

@@ -2,6 +2,6 @@
 <layers>
   <layer
       name="collective.volto.cookieconsent"
-      interface="collective.volto.cookieconsent.interfaces.ICollectiveVoltoCookieconsentLayer"
+      interface="collective.volto.cookieconsent.interfaces.ICollectiveVoltoCookieConsentLayer"
       />
 </layers>
