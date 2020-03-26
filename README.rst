@@ -6,6 +6,9 @@
 Volto Cookie Consent
 ====================
 
+.. image:: https://travis-ci.com/collective/collective.volto.cookieconsent.svg?branch=master
+    :target: https://travis-ci.com/collective/collective.volto.cookieconsent
+
 Add-on for manage Cookie Consent banner on Volto
 
 Features
