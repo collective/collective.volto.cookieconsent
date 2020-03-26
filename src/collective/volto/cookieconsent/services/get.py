@@ -20,7 +20,7 @@ class CookieConsentInfosGet(Service):
                 interface=ICookieConsentSettings,
                 default=False,
             )
-            or False
+            or False  # noqa
         )
         cookie_consent_configuration = (
             api.portal.get_registry_record(
@@ -28,7 +28,7 @@ class CookieConsentInfosGet(Service):
                 interface=ICookieConsentSettings,
                 default={},
             )
-            or '{}'
+            or '{}'  # noqa
         )
 
         return {
