@@ -19,14 +19,16 @@ Volto endpoint
 
 Anonymous users can't access registry resources by default with plone.restapi (there is a special permission).
 
-To avoid enabling registry access to everyone, this package exposes a dedicated restapi route with cookie consent config: *@cookieconsent-infos*
+To avoid enabling registry access to everyone, this package exposes a dedicated restapi route with cookie consent config: *@cookieconsent-infos*::
 
     > curl -i http://localhost:8080/Plone/@cookieconsent-infos -H 'Accept: application/json' --user admin:admin
 
-    > {
-    >   "accept_on_click": true,
-    >   "cookie_consent_configuration": {'some':'data'}
-    > }
+And the result is something like this::
+
+    {
+        "accept_on_click": true,
+        "cookie_consent_configuration": {'some':'data'}
+    }
 
 Control panel
 -------------
