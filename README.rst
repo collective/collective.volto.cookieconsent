@@ -22,7 +22,7 @@ Anonymous users can't access registry resources by default with plone.restapi (t
 To avoid enabling registry access to everyone, this package exposes a dedicated restapi route with cookie consent config: *@cookieconsent-infos*
 
     > curl -i http://localhost:8080/Plone/@cookieconsent-infos -H 'Accept: application/json' --user admin:admin
-    >
+
     > {
     >   "accept_on_click": true,
     >   "cookie_consent_configuration": {'some':'data'}
