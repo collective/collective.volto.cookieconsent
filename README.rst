@@ -38,11 +38,18 @@ Control panel
 
 You can edit settings directly from Volto because the control has been registered on Plone and available with plone.restapi.
 
+The ideal content of cookie_consent_configuration would be: ::
+
+    {
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sapien velit, aliquet eget commodo nec, auctor a sapien. Nam eu neque vulputate diam rhoncus faucibus. Curabitur quis varius libero. Lorem.",
+        "it": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sapien velit, aliquet eget commodo nec, auctor a sapien. Nam eu neque vulputate diam rhoncus faucibus. Curabitur quis varius libero. Lorem."
+    }
+
 
 Volto integration
 -----------------
 
-To use this product in Volto, your Volto project needs to include a new plugin: **TO-BE-CREATED**
+To use this product in Volto, your Volto project needs to include a new plugin: https://github.com/collective/volto-cookie-banner
 
 
 Translations
