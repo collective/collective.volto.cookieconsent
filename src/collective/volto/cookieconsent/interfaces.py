@@ -42,14 +42,14 @@ class ICollectiveVoltoCookieConsentLayer(IDefaultBrowserLayer):
 class ICookieConsentSettings(Interface):
     """ Interface for cookie consent controlpanel """
 
-    accept_on_click = Bool(
+    accept_on_scroll = Bool(
         title=_(
-            'accept_on_click_label', default='Accept policy on every click'
+            'accept_on_scroll_label', default='Accept policy on scroll'
         ),
         description=_(
-            'accept_on_click_help',
-            default='If checked, any click on links on any page will be '
-            'interpreted as the user accepted the cookie policy.',
+            'accept_on_scroll_help',
+            default='If checked, scrolling the page will be interrpreted'
+                    ' as the user accepted the cookie policy.',
         ),
     )
 
