@@ -14,9 +14,9 @@ class CookieConsentInfosGet(Service):
         super(CookieConsentInfosGet, self).__init__(context, request)
 
     def reply(self):
-        accept_on_click = (
+        accept_on_scroll = (
             api.portal.get_registry_record(
-                'accept_on_click',
+                'accept_on_scroll',
                 interface=ICookieConsentSettings,
                 default=False,
             )
@@ -32,7 +32,7 @@ class CookieConsentInfosGet(Service):
         )
 
         return {
-            'accept_on_click': accept_on_click,
+            'accept_on_scroll': accept_on_scroll,
             'cookie_consent_configuration': json.loads(
                 cookie_consent_configuration
             ),

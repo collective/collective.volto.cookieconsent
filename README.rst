@@ -29,7 +29,7 @@ To avoid enabling registry access to everyone, this package exposes a dedicated 
 And the result is something like this::
 
     {
-        "accept_on_click": true,
+        "accept_on_scroll": true,
         "cookie_consent_configuration": {'some':'data'}
     }
 

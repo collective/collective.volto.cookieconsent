@@ -47,12 +47,12 @@ class SocialInfosTest(unittest.TestCase):
 
         self.assertEqual(
             results,
-            {'accept_on_click': False, 'cookie_consent_configuration': {}},
+            {'accept_on_scroll': False, 'cookie_consent_configuration': {}},
         )
 
     def test_right_data(self):
         api.portal.set_registry_record(
-            'accept_on_click', True, interface=ICookieConsentSettings
+            'accept_on_scroll', True, interface=ICookieConsentSettings
         )
         api.portal.set_registry_record(
             'cookie_consent_configuration',
@@ -66,7 +66,7 @@ class SocialInfosTest(unittest.TestCase):
         self.assertEqual(
             results,
             {
-                'accept_on_click': True,
+                'accept_on_scroll': True,
                 'cookie_consent_configuration': {'foo': 'bar'},
             },
         )
