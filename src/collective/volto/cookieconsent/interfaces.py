@@ -25,13 +25,6 @@ def validate_cfg_json(value):
         raise Invalid(
             _('invalid_cfg_no_dict', 'JSON root must be a mapping (dict)')
         )
-    if len(jv) < 1:
-        raise Invalid(
-            _(
-                'invalid_cfg_empty_dict',
-                'At least one configuration should be saved.',
-            )
-        )
     return True
 
 
@@ -65,6 +58,7 @@ class ICookieConsentSettings(Interface):
             'The first defined policy configuration will be the default one '
             '(the one used when not language specific configuration is found).',  # noqa
         ),
+        default='{}',
         required=True,
         constraint=validate_cfg_json,
     )
