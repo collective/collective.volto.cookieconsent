@@ -65,7 +65,7 @@ class ICookieConsentSettings(Interface):
             'The first defined policy configuration will be the default one '
             '(the one used when not language specific configuration is found).',  # noqa
         ),
-        default="{}",
+        default="{ 'en': '' }",
         required=True,
         constraint=validate_cfg_json,
     )
