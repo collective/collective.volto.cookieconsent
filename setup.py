@@ -16,7 +16,7 @@ long_description = '\n\n'.join(
 
 setup(
     name='collective.volto.cookieconsent',
-    version='1.0a1',
+    version='1.0.0',
     description="Add-on for Volto to manage cookieconsent banners",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
