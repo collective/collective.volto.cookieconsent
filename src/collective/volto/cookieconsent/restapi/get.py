@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 from collective.volto.cookieconsent.interfaces import ICookieConsentSettings
+from collective.volto.cookieconsent.restapi.serializer import serialize_data
 from plone import api
 from plone.restapi.services import Service
 from zope.interface import implementer
 from zope.publisher.interfaces import IPublishTraverse
-
-import json
 
 
 @implementer(IPublishTraverse)
@@ -16,7 +15,7 @@ class CookieConsentInfosGet(Service):
     def reply(self):
         accept_on_scroll = (
             api.portal.get_registry_record(
-                'accept_on_scroll',
+                "accept_on_scroll",
                 interface=ICookieConsentSettings,
                 default=False,
             )
@@ -24,16 +23,16 @@ class CookieConsentInfosGet(Service):
         )
         cookie_consent_configuration = (
             api.portal.get_registry_record(
-                'cookie_consent_configuration',
+                "cookie_consent_configuration",
                 interface=ICookieConsentSettings,
-                default='{}',
+                default="{}",
             )
-            or '{}'  # noqa
+            or "{}"  # noqa
         )
 
         return {
-            'accept_on_scroll': accept_on_scroll,
-            'cookie_consent_configuration': json.loads(
+            "accept_on_scroll": accept_on_scroll,
+            "cookie_consent_configuration": serialize_data(
                 cookie_consent_configuration
             ),
         }

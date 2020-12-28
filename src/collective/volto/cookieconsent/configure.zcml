@@ -14,7 +14,7 @@
   <!--<includeDependencies package="." />-->
 
   <include package=".browser" />
-  <include package=".services" />
+  <include package=".restapi" />
 
   <genericsetup:registerProfile
       name="default"

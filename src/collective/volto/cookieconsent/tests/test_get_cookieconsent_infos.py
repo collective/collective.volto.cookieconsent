@@ -30,6 +30,11 @@ class SocialInfosTest(unittest.TestCase):
 
         setRoles(self.portal, TEST_USER_ID, ["Manager"])
 
+        self.page = api.content.create(
+            container=self.portal, type="Document", title="A page"
+        )
+        commit()
+
     def test_route_exists(self):
         response = self.api_session.get("/@cookieconsent-infos")
 
@@ -47,16 +52,16 @@ class SocialInfosTest(unittest.TestCase):
 
         self.assertEqual(
             results,
-            {'accept_on_scroll': False, 'cookie_consent_configuration': {}},
+            {"accept_on_scroll": False, "cookie_consent_configuration": {}},
         )
 
     def test_right_data(self):
         api.portal.set_registry_record(
-            'accept_on_scroll', True, interface=ICookieConsentSettings
+            "accept_on_scroll", True, interface=ICookieConsentSettings
         )
         api.portal.set_registry_record(
-            'cookie_consent_configuration',
-            json.dumps({'foo': 'bar'}),
+            "cookie_consent_configuration",
+            json.dumps({"foo": "bar"}),
             interface=ICookieConsentSettings,
         )
         commit()
@@ -66,7 +71,35 @@ class SocialInfosTest(unittest.TestCase):
         self.assertEqual(
             results,
             {
-                'accept_on_scroll': True,
-                'cookie_consent_configuration': {'foo': 'bar'},
+                "accept_on_scroll": True,
+                "cookie_consent_configuration": {"foo": "bar"},
+            },
+        )
+
+    def test_resolve_uids_in_text(self):
+        api.portal.set_registry_record(
+            "cookie_consent_configuration",
+            json.dumps(
+                {
+                    "foo": '<a href="resolveuid/{}">link</a>'.format(
+                        self.page.UID()
+                    )
+                }
+            ),
+            interface=ICookieConsentSettings,
+        )
+        commit()
+        response = self.api_session.get("/@cookieconsent-infos")
+        results = response.json()
+
+        self.assertEqual(
+            results,
+            {
+                "accept_on_scroll": False,
+                "cookie_consent_configuration": {
+                    "foo": '<a href="{}">link</a>'.format(
+                        self.page.absolute_url()
+                    )
+                },
             },
         )
