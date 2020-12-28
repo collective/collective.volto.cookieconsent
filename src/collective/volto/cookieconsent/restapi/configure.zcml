@@ -8,6 +8,7 @@
   <!-- enable controlpanel on plone.restapi -->
   <adapter
         factory=".controlpanel.CookieConsentSettingsControlpanel"
+        provides="collective.volto.cookieconsent.interfaces.ICookieConsentControlpanel"
         name="cookieconsent-settings" />
 
   <!-- route to retrieve cookie settings from Volto also from anonymous users -->
@@ -19,4 +20,10 @@
     permission="zope2.View"
     />
 
+
+  <!-- deserializer -->
+  <adapter factory=".deserializer.CookieconsentControlpanelDeserializeFromJson" />
+  <!-- serializer -->
+  <adapter factory=".serializer.CookieconsentControlpanelSerializeToJson" />
+  
 </configure>

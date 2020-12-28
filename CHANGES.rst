@@ -5,7 +5,8 @@ Changelog
 1.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Manage internal links with uids to keep consistency.
+  [cekk]
 
 
 1.0.0 (2020-04-08)
