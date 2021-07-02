@@ -44,7 +44,7 @@ class ICookieConsentSettings(Interface):
         title=_("accept_on_scroll_label", default="Accept policy on scroll"),
         description=_(
             "accept_on_scroll_help",
-            default="If checked, scrolling the page will be interrpreted"
+            default="If checked, scrolling the page will be interpreted"
             " as the user accepted the cookie policy.",
         ),
     )
