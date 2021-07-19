@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,11 +12,11 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: collective.volto.cookieconsent\n"
+"Domain: DOMAIN\n"
 
 #: ../profiles/default/controlpanel.xml
 msgid "Cookie Consent Settings"
-msgstr ""
+msgstr "Impostazioni per il consenso dei Cookie"
 
 #: ../configure.zcml:26
 msgid "Installs the collective.volto.cookieconsent add-on."
@@ -37,35 +34,36 @@ msgstr ""
 msgid "Volto Cookieconsent (uninstall)"
 msgstr ""
 
+#
 #. Default: "If checked, scrolling the page will be interpreted as the user accepted the cookie policy."
 #: ../interfaces.py:45
 msgid "accept_on_scroll_help"
-msgstr ""
+msgstr "Se selezionato, lo scroll della pagina verrà interpretato come accettazione automatica dei cookie."
 
 #. Default: "Accept policy on scroll"
 #: ../interfaces.py:44
 msgid "accept_on_scroll_label"
-msgstr ""
+msgstr "Accetta i Cookie allo scroll della pagina"
 
 #. Default: "Provide a configuration of the cookie consent banner.You can set different configurations for each enabled language.The first defined policy configuration will be the default one (the one used when not language specific configuration is found)."
 #: ../interfaces.py:57
 msgid "cookie_consent_configuration_help"
-msgstr ""
+msgstr "Consente di configurare il banner dei cookie. Puoi impostare diverse configurazioni per ogni lingua abilitata. La prima configurazione sarà quella predefinita per le altre lingue se non ne è stata definita una."
 
 #. Default: "Cookie consent configuration"
 #: ../interfaces.py:53
 msgid "cookie_consent_configuration_label"
-msgstr ""
+msgstr "Configurazione del consenso dei cookie"
 
 #. Default: "Configure cookie consent banner."
 #: ../browser/controlpanel.py:13
 msgid "cookie_consent_settings_help"
-msgstr ""
+msgstr "Configura il banner per il consenso dei cookie"
 
 #. Default: "Cookie Consent Settings"
 #: ../browser/controlpanel.py:10
 msgid "cookie_consent_settings_label"
-msgstr ""
+msgstr "Impostazioni per il consenso dei cookie"
 
 #. Default: "JSON root must be a mapping (dict)"
 #: ../interfaces.py:27
