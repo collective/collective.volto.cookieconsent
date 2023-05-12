@@ -1,0 +1,81 @@
+# Translation of collective.volto.cookieconsent.pot to Spanish
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: collective.volto.cookieconsent\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-02 13:16+0000\n"
+"PO-Revision-Date: 2023-05-10 12:35-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language: es\n"
+"Language-Team: ES <LL@li.org>\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Preferred-Encodings: utf-8\n"
+"MIME-Version: 1.0\n"
+"Language-Code: es\n"
+"Language-Name: Español\n"
+"Domain: collective.volto.cookieconsent\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+
+#: ../profiles/default/controlpanel.xml
+msgid "Cookie Consent Settings"
+msgstr "Configuración de consentimiento de cookies"
+
+#: ../configure.zcml:26
+msgid "Installs the collective.volto.cookieconsent add-on."
+msgstr "Instalar el complemento colectivo.volto.cookieconsent."
+
+#: ../configure.zcml:35
+msgid "Uninstalls the collective.volto.cookieconsent add-on."
+msgstr "Desinstalar el complemento colectivo.volto.cookieconsent."
+
+#: ../configure.zcml:26
+msgid "Volto Cookieconsent"
+msgstr "Consentimiento de cookies Volto"
+
+#: ../configure.zcml:35
+msgid "Volto Cookieconsent (uninstall)"
+msgstr "Consentimiento de cookies Volto (desinstalar)"
+
+#
+#. Default: "If checked, scrolling the page will be interpreted as the user accepted the cookie policy."
+#: ../interfaces.py:45
+msgid "accept_on_scroll_help"
+msgstr "Si está marcado, el desplazamiento de la página se interpretará como que el usuario aceptó la política de cookies."
+
+#. Default: "Accept policy on scroll"
+#: ../interfaces.py:44
+msgid "accept_on_scroll_label"
+msgstr "Aceptar cookies al desplazarse por la página"
+
+#. Default: "Provide a configuration of the cookie consent banner.You can set different configurations for each enabled language.The first defined policy configuration will be the default one (the one used when not language specific configuration is found)."
+#: ../interfaces.py:57
+msgid "cookie_consent_configuration_help"
+msgstr "Le permite configurar el banner de cookies. Puede establecer diferentes configuraciones para cada idioma habilitado. La primera configuración será la predeterminada para otros idiomas si no se ha definido uno."
+
+#. Default: "Cookie consent configuration"
+#: ../interfaces.py:53
+msgid "cookie_consent_configuration_label"
+msgstr "Configuración del consentimiento de cookies"
+
+#. Default: "Configure cookie consent banner."
+#: ../browser/controlpanel.py:13
+msgid "cookie_consent_settings_help"
+msgstr "Configurar el banner de consentimiento de cookies"
+
+#. Default: "Cookie Consent Settings"
+#: ../browser/controlpanel.py:10
+msgid "cookie_consent_settings_label"
+msgstr "Configuración de consentimiento de cookies"
+
+#. Default: "JSON root must be a mapping (dict)"
+#: ../interfaces.py:27
+msgid "invalid_cfg_no_dict"
+msgstr "La raíz JSON debe ser una asignación (dict)"
+
+#. Default: "JSON is not valid, parser complained: ${message}"
+#: ../interfaces.py:19
+msgid "invalid_json"
+msgstr "JSON no es válido, el analizador se quejó: ${message}"
